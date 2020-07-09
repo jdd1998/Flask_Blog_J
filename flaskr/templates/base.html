@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{% endblock %} - Flaskr</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="flask-page">
+    <header class="flask-header">
+      <hgroup>
+        <h1>Flaskr - 个人博客</h1>
+        <h2>此博客是一个关注Python技术的个人博客，提供一个个人兴趣的记录和玩耍。</h2>
+        <h3>
+          <ul>
+            {% if g.user %}
+              <li><span>{{ g.user['username'] }}</span>
+              <li><a href="{{ url_for('auth.logout') }}">Log Out</a>
+            {% else %}
+              <li><a href="{{ url_for('auth.register') }}">Register</a>
+              <li><a href="{{ url_for('auth.login') }}">Log In</a>
+            {% endif %}
+          </ul>
+        </h3>
+      </hgroup>
+      <nav class="flask-nav">
+        <ul>
+          <li><a href="{{ url_for('blog.index') }}">首页</a></li>
+          <li><a href="{{ url_for('auth.register') }}">注册</a></li>
+          <li><a href="{{ url_for('auth.login') }}">登录</a></li>
+          <li><a href="{{ url_for('blog.index_nav', username='zhouhaichun') }}">zhouhaichun</a></li>
+          <li><a href="{{ url_for('blog.index_nav', username='xiaoqiao') }}">xiaoqiao</></li>
+          <li><a href="{{ url_for('blog.index_nav', username='aaaa') }}">aaaa</a></li>
+          <li><a>Python</a></li>
+          <li><a>Sql</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section class="content">
+      <header>
+        {% block header %}{% endblock %}
+      </header>
+      {% for message in get_flashed_messages() %}
+        <div class="flash">{{ message }}</div>
+      {% endfor %}
+      {% block content %}{% endblock %}
+    </section>
+  </div>
+</body>
+</html>

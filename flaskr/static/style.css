@@ -1,0 +1,61 @@
+hr { border: none; border-top: 1px solid lightgray; }
+ol, ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #377ba8;
+}
+a:hover {
+  color: #6a6a6a;
+}
+.flask-page {
+  padding: 2rem 3rem;
+}
+.flask-header h1 {
+  font-family: serif;
+  color: #377ba8;
+  margin: 1rem 0;
+}
+.flask-header h2 {
+  font-weight: normal;
+  font-size: 1rem;
+}
+.flask-header h3 {
+  display: flex;
+}
+.flask-header ul {
+  display: flex;
+}
+.flask-header ul li {
+  margin: 0 1rem;
+}
+.flask-header .flask-nav {
+  margin-top: 2rem;
+}
+.flask-nav ul {
+  display: flex;
+  border-top: 1px solid #ededed;
+  border-bottom: 1px solid #ededed;
+}
+.flask-nav ul li {
+  flex: 1;
+  text-align: center;
+  padding: 1rem 0;
+}
+.content { padding: 0 1rem 1rem; }
+.content > header { border-bottom: 1px solid lightgray; display: flex; align-items: flex-end; }
+.content > header h1 { flex: auto; margin: 1rem 0 0.25rem 0; }
+.flash { margin: 1em 0; padding: 1em; background: #cae6f6; border: 1px solid #377ba8; }
+.post > header { display: flex; align-items: flex-end; font-size: 0.85em; }
+.post > header > div:first-of-type { flex: auto; }
+.post > header h1 { font-size: 1.5em; margin-bottom: 0; }
+.post .about { color: slategray; font-style: italic; }
+.post .body { white-space: pre-line; }
+.content:last-child { margin-bottom: 0; }
+.content form { margin: 1em 0; display: flex; flex-direction: column; }
+.content label { font-weight: bold; margin-bottom: 0.5em; }
+.content input, .content textarea { margin-bottom: 1em; }
+.content textarea { min-height: 12em; resize: vertical; }
+input.danger { color: #cc2f2e; }
+input[type=submit] { align-self: start; min-width: 10em; }
